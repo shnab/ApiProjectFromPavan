@@ -1,16 +1,15 @@
 *** Settings ***
 Library    RequestsLibrary
-Library    Collections
-
+Library    Collections    #LIST ICIN GEREKLI
 
 *** Variables ***
 #http://restapi.demoqa.com/utilities/weather/city/Delhi
 ${base_url}    http://restapi.demoqa.com
 ${city}    Delhi
 #http://dummy.restapiexample.com/api/v1/employee/1
+#https://demoqa.com/swagger/#/
 ${dummy_base_url}    http://dummy.restapiexample.com
 ${dummy_employee_id}    1
-
 
 *** Test Cases ***
 Get_WeatherInfo
@@ -24,7 +23,6 @@ Get_WeatherInfo
     ${response}=    get request    mysession    /utilities/weather/city/${city}
 #    create session    mysession1    ${dummy_base_url}
 #    ${response}=    get request    mysession1    /api/v1/employee/${dummy_employee_id}
-
     log to console    ${response.status_code}
     log to console    ${response.content}
     log to console    ${response.headers}
