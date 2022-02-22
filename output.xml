@@ -1,240 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220129 23:31:03.444" rpa="false" schemaversion="2">
-<suite id="s1" name="TC" source="C:\development\robot-scripts\ApiProjectFromPavan\VideoGameAPI\TC.robot">
-<test id="s1-t1" name="TC1:Returns all the video games(GET)">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220129 23:31:03.880" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220129 23:31:03.879" endtime="20220129 23:31:03.880"/>
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220131 16:15:44.174" rpa="false" schemaversion="2">
+<suite id="s1" name="TC6 XML" source="C:\development\robot-scripts\ApiProjectFromPavan\TestCases\TC6_XML.robot">
+<test id="s1-t1" name="TestCase1:">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>C:\\development\\robot-scripts\\ApiProjectFromPavan\\employees.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20220131 16:15:44.351" level="INFO">${xml_obj} = &lt;Element 'employees' at 0x0000022BB66BADE0&gt;</msg>
+<status status="PASS" starttime="20220131 16:15:44.349" endtime="20220131 16:15:44.351"/>
 </kw>
-<kw name="Get Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/app/videogames</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20220129 23:31:03.882" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20220129 23:31:03.925" level="INFO">GET Request : url=http://localhost:8080/app/videogames 
- path_url=/app/videogames 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20220129 23:31:03.927" level="INFO">Detected declarative mark in sequence. Priority +1 given for utf_8.</msg>
-<msg timestamp="20220129 23:31:03.949" level="INFO">utf_8 passed initial chaos probing. Mean measured chaos is 0.000000 %</msg>
-<msg timestamp="20220129 23:31:03.956" level="INFO">We detected language [('English', 1.0), ('Dutch', 1.0), ('Indonesian', 1.0)] using utf_8</msg>
-<msg timestamp="20220129 23:31:03.956" level="INFO">utf_8 is most likely the one. Stopping the process.</msg>
-<msg timestamp="20220129 23:31:03.956" level="INFO">GET Response : url=http://localhost:8080/app/videogames 
- status=200, reason= 
- headers={'Content-Type': 'application/xml', 'Content-Length': '1923', 'Date': 'Sat, 29 Jan 2022 22:31:03 GMT'} 
- body=&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;videoGames&gt;&lt;videoGame&gt;&lt;id&gt;0&lt;/id&gt;&lt;reviewScore&gt;0&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Shooter" rating="Universal"&gt;&lt;id&gt;1&lt;/id&gt;&lt;name&gt;Resident Evil 4&lt;/name&gt;&lt;releaseDate&gt;2005-10-01T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;85&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Driving" rating="Universal"&gt;&lt;id&gt;2&lt;/id&gt;&lt;name&gt;Gran Turismo 3&lt;/name&gt;&lt;releaseDate&gt;2001-03-10T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;91&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Puzzle" rating="Universal"&gt;&lt;id&gt;3&lt;/id&gt;&lt;name&gt;Tetris&lt;/name&gt;&lt;releaseDate&gt;1984-06-25T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;88&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Platform" rating="Universal"&gt;&lt;id&gt;4&lt;/id&gt;&lt;name&gt;Super Mario 64&lt;/name&gt;&lt;releaseDate&gt;1996-10-20T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;90&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Adventure" rating="PG-13"&gt;&lt;id&gt;5&lt;/id&gt;&lt;name&gt;The Legend of Zelda: Ocarina of Time&lt;/name&gt;&lt;releaseDate&gt;1998-12-10T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;93&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Shooter" rating="Mature"&gt;&lt;id&gt;6&lt;/id&gt;&lt;name&gt;Doom&lt;/name&gt;&lt;releaseDate&gt;1993-02-18T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;81&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Puzzle" rating="Universal"&gt;&lt;id&gt;7&lt;/id&gt;&lt;name&gt;Minecraft&lt;/name&gt;&lt;releaseDate&gt;2011-12-05T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;77&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Strategy" rating="Universal"&gt;&lt;id&gt;8&lt;/id&gt;&lt;name&gt;SimCity 2000&lt;/name&gt;&lt;releaseDate&gt;1994-09-11T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;88&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="RPG" rating="PG-13"&gt;&lt;id&gt;9&lt;/id&gt;&lt;name&gt;Final Fantasy VII&lt;/name&gt;&lt;releaseDate&gt;1997-08-20T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;97&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;videoGame category="Driving" rating="Mature"&gt;&lt;id&gt;10&lt;/id&gt;&lt;name&gt;Grand Theft Auto III&lt;/name&gt;&lt;releaseDate&gt;2001-04-23T00:00:00+02:00&lt;/releaseDate&gt;&lt;reviewScore&gt;90&lt;/reviewScore&gt;&lt;/videoGame&gt;&lt;/videoGames&gt; 
- </msg>
-<msg timestamp="20220129 23:31:03.957" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220129 23:31:03.881" endtime="20220129 23:31:03.957"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:03.957" endtime="20220129 23:31:03.959"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:03.959" endtime="20220129 23:31:03.962"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220129 23:31:03.965" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220129 23:31:03.963" endtime="20220129 23:31:03.965"/>
+<kw name="Get Element Text" library="XML">
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20220131 16:15:44.353" level="INFO">${emp_firstname} = John</msg>
+<status status="PASS" starttime="20220131 16:15:44.351" endtime="20220131 16:15:44.353"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
+<arg>${emp_firstname}</arg>
+<arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220129 23:31:03.966" endtime="20220129 23:31:03.966"/>
+<status status="PASS" starttime="20220131 16:15:44.354" endtime="20220131 16:15:44.355"/>
 </kw>
-<status status="PASS" starttime="20220129 23:31:03.877" endtime="20220129 23:31:03.967"/>
-</test>
-<test id="s1-t2" name="TC2:Add a new video game(POST)">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220129 23:31:03.975" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220129 23:31:03.974" endtime="20220129 23:31:03.975"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>id=100</arg>
-<arg>name=Spider-Man</arg>
-<arg>releaseDate=2022-01-29T21:57:58.730Z</arg>
-<arg>reviewScore=5</arg>
-<arg>category=Adventure</arg>
-<arg>rating=Universal</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220129 23:31:03.977" level="INFO">${body} = {'id': '100', 'name': 'Spider-Man', 'releaseDate': '2022-01-29T21:57:58.730Z', 'reviewScore': '5', 'category': 'Adventure', 'rating': 'Universal'}</msg>
-<status status="PASS" starttime="20220129 23:31:03.976" endtime="20220129 23:31:03.977"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>Content-Type=application/json</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220129 23:31:03.978" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
-<status status="PASS" starttime="20220129 23:31:03.977" endtime="20220129 23:31:03.978"/>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/app/videogames</arg>
-<arg>data=${body}</arg>
-<arg>headers=${header}</arg>
-<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
-<msg timestamp="20220129 23:31:03.978" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20220129 23:31:04.000" level="INFO">POST Request : url=http://localhost:8080/app/videogames 
- path_url=/app/videogames 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '146'} 
- body={"id": "100", "name": "Spider-Man", "releaseDate": "2022-01-29T21:57:58.730Z", "reviewScore": "5", "category": "Adventure", "rating": "Universal"} 
- </msg>
-<msg timestamp="20220129 23:31:04.008" level="INFO">ascii passed initial chaos probing. Mean measured chaos is 0.000000 %</msg>
-<msg timestamp="20220129 23:31:04.009" level="INFO">ascii should target any language(s) of ['Latin Based']</msg>
-<msg timestamp="20220129 23:31:04.009" level="INFO">ascii is most likely the one. Stopping the process.</msg>
-<msg timestamp="20220129 23:31:04.010" level="INFO">POST Response : url=http://localhost:8080/app/videogames 
- status=200, reason= 
- headers={'Content-Type': 'application/xml', 'Content-Length': '39', 'Date': 'Sat, 29 Jan 2022 22:31:03 GMT'} 
- body={"status": "Record Added Successfully"} 
- </msg>
-<msg timestamp="20220129 23:31:04.010" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220129 23:31:03.978" endtime="20220129 23:31:04.010"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:04.012" endtime="20220129 23:31:04.014"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:04.015" endtime="20220129 23:31:04.017"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.headers}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:04.018" endtime="20220129 23:31:04.019"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220129 23:31:04.022" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220129 23:31:04.019" endtime="20220129 23:31:04.022"/>
+<kw name="Get Element" library="XML">
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20220131 16:15:44.356" level="INFO">${emp_firstname} = &lt;Element 'firstname' at 0x0000022BB66BAE80&gt;</msg>
+<status status="PASS" starttime="20220131 16:15:44.355" endtime="20220131 16:15:44.356"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
+<arg>${emp_firstname.text}</arg>
+<arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220129 23:31:04.023" endtime="20220129 23:31:04.023"/>
+<status status="PASS" starttime="20220131 16:15:44.356" endtime="20220131 16:15:44.358"/>
 </kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220129 23:31:04.026" level="INFO">${res_body} = {"status": "Record Added Successfully"}</msg>
-<status status="PASS" starttime="20220129 23:31:04.024" endtime="20220129 23:31:04.026"/>
+<kw name="Element Text Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>John</arg>
+<arg>.//employee[1]/firstname</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" starttime="20220131 16:15:44.358" endtime="20220131 16:15:44.359"/>
 </kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>Record Added Successfully</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220129 23:31:04.026" endtime="20220129 23:31:04.027"/>
+<kw name="Get Element Count" library="XML">
+<var>${count}</var>
+<arg>${xml_obj}</arg>
+<arg>.//employee</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20220131 16:15:44.360" level="INFO">6 elements matched './/employee'.</msg>
+<msg timestamp="20220131 16:15:44.360" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20220131 16:15:44.359" endtime="20220131 16:15:44.360"/>
 </kw>
-<status status="PASS" starttime="20220129 23:31:03.969" endtime="20220129 23:31:04.027"/>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${count}</arg>
+<arg>6</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20220131 16:15:44.361" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220131 16:15:44.361" endtime="20220131 16:15:44.361"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>be129</arg>
+<arg>.//employee[1]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20220131 16:15:44.362" endtime="20220131 16:15:44.362"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>be135</arg>
+<arg>.//employee[6]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20220131 16:15:44.363" endtime="20220131 16:15:44.364"/>
+</kw>
+<status status="PASS" starttime="20220131 16:15:44.348" endtime="20220131 16:15:44.364"/>
 </test>
-<test id="s1-t3" name="TC3:Return the details of a single game bi ID(GET)">
-<kw name="Create Session" library="RequestsLibrary">
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220129 23:31:04.030" level="INFO">Creating Session using : alias=mysession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220129 23:31:04.029" endtime="20220129 23:31:04.030"/>
-</kw>
-<kw name="Get Request" library="RequestsLibrary">
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/app/videogames/100</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<msg timestamp="20220129 23:31:04.032" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20220129 23:31:04.051" level="INFO">GET Request : url=http://localhost:8080/app/videogames/100 
- path_url=/app/videogames/100 
- headers={'User-Agent': 'python-requests/2.27.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20220129 23:31:04.051" level="INFO">Detected declarative mark in sequence. Priority +1 given for utf_8.</msg>
-<msg timestamp="20220129 23:31:04.056" level="INFO">utf_8 passed initial chaos probing. Mean measured chaos is 0.000000 %</msg>
-<msg timestamp="20220129 23:31:04.058" level="INFO">We detected language [('English', 1.0), ('Dutch', 1.0), ('Indonesian', 1.0)] using utf_8</msg>
-<msg timestamp="20220129 23:31:04.058" level="INFO">utf_8 is most likely the one. Stopping the process.</msg>
-<msg timestamp="20220129 23:31:04.058" level="INFO">GET Response : url=http://localhost:8080/app/videogames/100 
- status=200, reason= 
- headers={'Content-Type': 'application/xml', 'Content-Length': '233', 'Date': 'Sat, 29 Jan 2022 22:31:03 GMT'} 
- body=&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;videoGame category="Adventure" rating="Universal"&gt;&lt;id&gt;100&lt;/id&gt;&lt;name&gt;Spider-Man&lt;/name&gt;&lt;releaseDate&gt;2022-01-29T00:00:00+01:00&lt;/releaseDate&gt;&lt;reviewScore&gt;5&lt;/reviewScore&gt;&lt;/videoGame&gt; 
- </msg>
-<msg timestamp="20220129 23:31:04.058" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220129 23:31:04.031" endtime="20220129 23:31:04.058"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:04.059" endtime="20220129 23:31:04.060"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220129 23:31:04.062" endtime="20220129 23:31:04.065"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${status_code}</var>
-<arg>${response.status_code}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220129 23:31:04.069" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220129 23:31:04.066" endtime="20220129 23:31:04.069"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${status_code}</arg>
-<arg>200</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220129 23:31:04.070" endtime="20220129 23:31:04.072"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${res_body}</var>
-<arg>${response.content}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220129 23:31:04.078" level="INFO">${res_body} = &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;videoGame category="Adventure" rating="Universal"&gt;&lt;id&gt;100&lt;/id&gt;&lt;name&gt;Spider-Man&lt;/name&gt;&lt;releaseDate&gt;2022-01-29T00:00:00+01:00&lt;/releaseDate&gt;&lt;review...</msg>
-<status status="PASS" starttime="20220129 23:31:04.075" endtime="20220129 23:31:04.078"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${res_body}</arg>
-<arg>Spider-Man</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20220129 23:31:04.078" endtime="20220129 23:31:04.079"/>
-</kw>
-<status status="PASS" starttime="20220129 23:31:04.029" endtime="20220129 23:31:04.079"/>
-</test>
-<status status="PASS" starttime="20220129 23:31:03.449" endtime="20220129 23:31:04.081"/>
+<status status="PASS" starttime="20220131 16:15:44.180" endtime="20220131 16:15:44.366"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="TC">TC</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC6 XML">TC6 XML</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220129 23:31:03.882" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg timestamp="20220129 23:31:03.978" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
-<msg timestamp="20220129 23:31:04.032" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
 </errors>
 </robot>
