@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20220131 16:15:44.174" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.1 on win32)" generated="20240905 09:09:18.778" rpa="false" schemaversion="2">
 <suite id="s1" name="TC6 XML" source="C:\development\robot-scripts\ApiProjectFromPavan\TestCases\TC6_XML.robot">
 <test id="s1-t1" name="TestCase1:">
 <kw name="Parse Xml" library="XML">
 <var>${xml_obj}</var>
 <arg>C:\\development\\robot-scripts\\ApiProjectFromPavan\\employees.xml</arg>
 <doc>Parses the given XML file or string into an element structure.</doc>
-<msg timestamp="20220131 16:15:44.351" level="INFO">${xml_obj} = &lt;Element 'employees' at 0x0000022BB66BADE0&gt;</msg>
-<status status="PASS" starttime="20220131 16:15:44.349" endtime="20220131 16:15:44.351"/>
+<msg timestamp="20240905 09:09:18.934" level="INFO">${xml_obj} = &lt;Element 'employees' at 0x0000026F14AFACF0&gt;</msg>
+<status status="PASS" starttime="20240905 09:09:18.919" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Get Element Text" library="XML">
 <var>${emp_firstname}</var>
 <arg>${xml_obj}</arg>
 <arg>.//employee[1]/firstname</arg>
 <doc>Returns all text of the element, possibly whitespace normalized.</doc>
-<msg timestamp="20220131 16:15:44.353" level="INFO">${emp_firstname} = John</msg>
-<status status="PASS" starttime="20220131 16:15:44.351" endtime="20220131 16:15:44.353"/>
+<msg timestamp="20240905 09:09:18.934" level="INFO">${emp_firstname} = John</msg>
+<status status="PASS" starttime="20240905 09:09:18.934" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${emp_firstname}</arg>
 <arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220131 16:15:44.354" endtime="20220131 16:15:44.355"/>
+<status status="PASS" starttime="20240905 09:09:18.934" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Get Element" library="XML">
 <var>${emp_firstname}</var>
 <arg>${xml_obj}</arg>
 <arg>.//employee[1]/firstname</arg>
 <doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
-<msg timestamp="20220131 16:15:44.356" level="INFO">${emp_firstname} = &lt;Element 'firstname' at 0x0000022BB66BAE80&gt;</msg>
-<status status="PASS" starttime="20220131 16:15:44.355" endtime="20220131 16:15:44.356"/>
+<msg timestamp="20240905 09:09:18.934" level="INFO">${emp_firstname} = &lt;Element 'firstname' at 0x0000026F14AFAD90&gt;</msg>
+<status status="PASS" starttime="20240905 09:09:18.934" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${emp_firstname.text}</arg>
 <arg>John</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220131 16:15:44.356" endtime="20220131 16:15:44.358"/>
+<status status="PASS" starttime="20240905 09:09:18.934" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Element Text Should Be" library="XML">
 <arg>${xml_obj}</arg>
 <arg>John</arg>
 <arg>.//employee[1]/firstname</arg>
 <doc>Verifies that the text of the specified element is ``expected``.</doc>
-<status status="PASS" starttime="20220131 16:15:44.358" endtime="20220131 16:15:44.359"/>
+<status status="PASS" starttime="20240905 09:09:18.934" endtime="20240905 09:09:18.934"/>
 </kw>
 <kw name="Get Element Count" library="XML">
 <var>${count}</var>
 <arg>${xml_obj}</arg>
 <arg>.//employee</arg>
 <doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
-<msg timestamp="20220131 16:15:44.360" level="INFO">6 elements matched './/employee'.</msg>
-<msg timestamp="20220131 16:15:44.360" level="INFO">${count} = 6</msg>
-<status status="PASS" starttime="20220131 16:15:44.359" endtime="20220131 16:15:44.360"/>
+<msg timestamp="20240905 09:09:18.950" level="INFO">6 elements matched './/employee'.</msg>
+<msg timestamp="20240905 09:09:18.950" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20240905 09:09:18.950" endtime="20240905 09:09:18.950"/>
 </kw>
 <kw name="Should Be Equal As Integers" library="BuiltIn">
 <arg>${count}</arg>
 <arg>6</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<msg timestamp="20220131 16:15:44.361" level="INFO">Argument types are:
+<msg timestamp="20240905 09:09:18.950" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20220131 16:15:44.361" endtime="20220131 16:15:44.361"/>
+<status status="PASS" starttime="20240905 09:09:18.950" endtime="20240905 09:09:18.950"/>
 </kw>
 <kw name="Element Attribute Should Be" library="XML">
 <arg>${xml_obj}</arg>
@@ -68,7 +68,7 @@
 <arg>be129</arg>
 <arg>.//employee[1]</arg>
 <doc>Verifies that the specified attribute is ``expected``.</doc>
-<status status="PASS" starttime="20220131 16:15:44.362" endtime="20220131 16:15:44.362"/>
+<status status="PASS" starttime="20240905 09:09:18.950" endtime="20240905 09:09:18.950"/>
 </kw>
 <kw name="Element Attribute Should Be" library="XML">
 <arg>${xml_obj}</arg>
@@ -76,11 +76,11 @@
 <arg>be135</arg>
 <arg>.//employee[6]</arg>
 <doc>Verifies that the specified attribute is ``expected``.</doc>
-<status status="PASS" starttime="20220131 16:15:44.363" endtime="20220131 16:15:44.364"/>
+<status status="PASS" starttime="20240905 09:09:18.950" endtime="20240905 09:09:18.950"/>
 </kw>
-<status status="PASS" starttime="20220131 16:15:44.348" endtime="20220131 16:15:44.364"/>
+<status status="PASS" starttime="20240905 09:09:18.919" endtime="20240905 09:09:18.950"/>
 </test>
-<status status="PASS" starttime="20220131 16:15:44.180" endtime="20220131 16:15:44.366"/>
+<status status="PASS" starttime="20240905 09:09:18.778" endtime="20240905 09:09:18.950"/>
 </suite>
 <statistics>
 <total>

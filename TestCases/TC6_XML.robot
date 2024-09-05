@@ -36,3 +36,4 @@ TestCase1:
     element attribute should be    ${xml_obj}    id    be135    .//employee[6]
 
 #    Val4_-> Check values of child elements
+
